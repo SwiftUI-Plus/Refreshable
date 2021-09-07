@@ -5,6 +5,8 @@
 
 # Refreshable
 
+> Also available as a part of my [SwiftUI+ Collection](https://benkau.com/packages.json) – just add it to Xcode 13+
+
 A backport of the new `refreshable` modifier with support for all SwiftUI versions.
 
 This includes support for a `refreshAction` in the `Environment` as well as a convenient `RefreshableView` that makes it easy to build your own trigger's for _any_ refresh action.
@@ -13,14 +15,14 @@ This includes support for a `refreshAction` in the `Environment` as well as a co
 
 ## Example
 
-To avoid naming issues, the modifier is called `onRefresh` and to provide a familiar API for ending the refresh, the closure returns a `Refresh` instance that can be used (similary to `presentationMode`), to notify the UI that it should stop refreshing. 
+To avoid naming issues, the modifier is called `onRefresh` and to provide a familiar API for ending the refresh, the closure returns a `Refresh` instance that can be used (similary to `presentationMode`), to notify the UI that it should stop refreshing.
 
 ```swift
 ScrollView {
     // content
 }
-.onRefresh { refresh in 
-    URLSession.shared.dataTask(with: url) { _, _, _ in 
+.onRefresh { refresh in
+    URLSession.shared.dataTask(with: url) { _, _, _ in
         refresh.wrappedValue.end()
     }
 }
@@ -48,7 +50,7 @@ RefreshableView { phase in
 
 ## Installation
 
-The code is packaged as a framework. You can install manually (by copying the files in the `Sources` directory) or using Swift Package Manager (__preferred__)
+The code is packaged as a framework. You can install manually (by copying the files in the `Sources` directory) or using Swift Package Manager (**preferred**)
 
 To install using Swift Package Manager, add this to the `dependencies` section of your `Package.swift` file:
 
